@@ -1,5 +1,6 @@
 #include "f:/quadtree/header/quadtree.h"
 #include <cmath>
+#include <iomanip>
 #include <iostream>
 #include "f:/quadtree/header/common.h"
 
@@ -11,8 +12,9 @@ GPSdata::GPSdata(int _id, string _time, double _lon, double _lat)
 void GPSdata::print() {
     std::cout << "id:" << this->id << '\n';
     std::cout << "time:" << this->time << '\n';
-    std::cout << "coordinate:" << this->longitude << ',' << this->latitude
-              << '\n';
+    std::cout << "coordinate:" << std::fixed << std::setprecision(5)
+              << this->longitude << ',' << std::fixed << std::setprecision(5)
+              << this->latitude << '\n';
 }
 
 Rectangle::Rectangle() {}
@@ -49,8 +51,10 @@ bool Rectangle::Inside(point2d p) {
 }
 
 bool Rectangle::Inside(double x, double y) {
-    return x >= bottom_left.first && x <= top_right.first &&
-           y <= top_right.second && y >= bottom_left.second;
+    return (x >= bottom_left.first || equal(x, bottom_left.first)) &&
+           (x <= top_right.first || equal(x, top_right.first)) &&
+           (y <= top_right.second || equal(y, top_right.second)) &&
+           (y >= bottom_left.second || equal(y, bottom_left.second));
 }
 
 QuadNode::QuadNode() {}
@@ -175,18 +179,60 @@ vector<GPSdata*> QuadNode::PointSearch(point2d p) {
     return result;
 }
 vector<GPSdata*> QuadNode::AreaSearch(Rectangle* rect) {
-    double x = (rect->bottom_left.first + rect->top_right.first) / 2;
-    double y = (rect->bottom_left.second + rect->top_right.second) / 2;
+    point2d p1 = rect->top_right;
+    point2d p2 = rect->bottom_left;
+    point2d p3 =
+        std::make_pair(rect->top_right.first, rect->bottom_left.second);
+    point2d p4 =
+        std::make_pair(rect->bottom_left.first, rect->top_right.second);
 
-    point2d p = std::make_pair(x, y);
-    vector<GPSdata*> leaf;
-    this->findPointLeaf(p, leaf);
-    vector<GPSdata*> result;
-    for(auto dat:leaf){
-        if(rect->Inside(dat->longitude,dat->latitude)){
-            result.emplace_back(dat);
+    vector<vector<GPSdata*>> leafs;
+    vector<GPSdata*> leaf1, leaf2, leaf3, leaf4;
+    this->findPointLeaf(p1, leaf1);
+    this->findPointLeaf(p2, leaf2);
+    this->findPointLeaf(p3, leaf3);
+    this->findPointLeaf(p4, leaf4);
+    leafs.emplace_back(leaf1);
+    leafs.emplace_back(leaf2);
+    leafs.emplace_back(leaf3);
+    leafs.emplace_back(leaf4);
+
+    vector<GPSdata*> temp = {leafs[0].empty() ? nullptr : leafs[0][0],
+                             leafs[1].empty() ? nullptr : leafs[1][0],
+                             leafs[2].empty() ? nullptr : leafs[2][0],
+                             leafs[3].empty() ? nullptr : leafs[3][0]};
+    vector<int> same(4, 0);
+    int k = 1;
+    for (int i = 0; i < 4; ++i) {
+        if (same[i] == 0) {
+            same[i] = k;
+            ++k;
+        }
+
+        for (int j = 0; j < 4; ++j) {
+            if (temp[i] == nullptr) {
+                same[i] = 5;
+            } else {
+                if (same[j] == 0 && temp[i]->time == temp[j]->time) {
+                    same[j] = same[i];
+                }
+            }
         }
     }
+
+    k = 1;
+    vector<GPSdata*> result;
+    for (int i = 0; i < 4; ++i) {
+        if (same[i] == k) {
+            ++k;
+            for (auto dat : leafs[i]) {
+                if (rect->Inside(dat->longitude, dat->latitude)) {
+                    result.emplace_back(dat);
+                }
+            }
+        }
+    }
+
     return result;
 }
 vector<GPSdata*> QuadNode::AdjacentSearch(Rectangle* rect,
