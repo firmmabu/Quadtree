@@ -1,0 +1,20 @@
+[
+{
+  "directory": "F:/quadtree/build",
+  "command": "g++   -g -std=gnu++11 -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c F:\\quadtree\\src\\main.cpp",
+  "file": "F:/quadtree/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.obj"
+},
+{
+  "directory": "F:/quadtree/build",
+  "command": "g++   -g -std=gnu++11 -o CMakeFiles\\main.dir\\src\\quadtree.cpp.obj -c F:\\quadtree\\src\\quadtree.cpp",
+  "file": "F:/quadtree/src/quadtree.cpp",
+  "output": "CMakeFiles/main.dir/src/quadtree.cpp.obj"
+},
+{
+  "directory": "F:/quadtree/build",
+  "command": "g++   -g -std=gnu++11 -o CMakeFiles\\main.dir\\src\\common.cpp.obj -c F:\\quadtree\\src\\common.cpp",
+  "file": "F:/quadtree/src/common.cpp",
+  "output": "CMakeFiles/main.dir/src/common.cpp.obj"
+}
+]

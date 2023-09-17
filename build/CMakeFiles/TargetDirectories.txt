@@ -1,0 +1,3 @@
+F:/quadtree/build/CMakeFiles/main.dir
+F:/quadtree/build/CMakeFiles/edit_cache.dir
+F:/quadtree/build/CMakeFiles/rebuild_cache.dir
