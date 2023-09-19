@@ -61,9 +61,14 @@ class QuadNode {
 
     vector<GPSdata*> PointSearch(point2d p);
     vector<GPSdata*> AreaSearch(Rectangle* rect);
-    vector<GPSdata*> AdjacentSearch(Rectangle* rect,
-                                    string time1,
-                                    string time2);
+    GPSdata* AdjacentSearch(Rectangle* rect,
+                            vector<int> time1,
+                            vector<int> time2,
+                            int idx);
+    bool PointChange(int id, point2d p, double lon, double lat);
+
+    bool PointDelete(int id, double lon, double lat);
+    bool PointDelete(int id, string time);
 };
 
 #endif

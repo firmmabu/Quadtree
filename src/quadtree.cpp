@@ -1,4 +1,5 @@
 #include "f:/quadtree/header/quadtree.h"
+#include <float.h>
 #include <cmath>
 #include <iomanip>
 #include <iostream>
@@ -178,6 +179,7 @@ vector<GPSdata*> QuadNode::PointSearch(point2d p) {
 
     return result;
 }
+
 vector<GPSdata*> QuadNode::AreaSearch(Rectangle* rect) {
     point2d p1 = rect->top_right;
     point2d p2 = rect->bottom_left;
@@ -210,6 +212,7 @@ vector<GPSdata*> QuadNode::AreaSearch(Rectangle* rect) {
         }
 
         for (int j = 0; j < 4; ++j) {
+            // 这块是空的就设置为5，因为如果不是空的最大也就是4
             if (temp[i] == nullptr) {
                 same[i] = 5;
             } else {
@@ -235,8 +238,41 @@ vector<GPSdata*> QuadNode::AreaSearch(Rectangle* rect) {
 
     return result;
 }
-vector<GPSdata*> QuadNode::AdjacentSearch(Rectangle* rect,
-                                          string time1,
-                                          string time2) {
-    return vector<GPSdata*>();
+
+GPSdata* QuadNode::AdjacentSearch(Rectangle* rect,
+                                  vector<int> time1,
+                                  vector<int> time2,
+                                  int idx) {
+    vector<GPSdata*> area = AreaSearch(rect);
+    vector<GPSdata*> taxi_this;
+    vector<GPSdata*> taxi_other;
+    GPSdata* result;
+    double min_dis = DBL_MAX;
+    for (auto gps : area) {
+        if (later(gps->time, time1) && earlier(gps->time, time2)) {
+            if (gps->id == idx) {
+                taxi_this.emplace_back(gps);
+            } else {
+                taxi_other.emplace_back(gps);
+            }
+        }
+    }
+
+    for (auto other_taxi : taxi_other) {
+        for (auto this_taxi : taxi_this) {
+            double d = distance(other_taxi, this_taxi);
+
+            if (d < min_dis) {
+                min_dis = d;
+                result = other_taxi;
+            }
+        }
+    }
+    return result;
 }
+
+bool QuadNode::PointChange(int id, point2d p, double lon, double lat) {}
+
+bool QuadNode::PointDelete(int id, double lon, double lat) {}
+
+bool QuadNode::PointDelete(int id, string time) {}

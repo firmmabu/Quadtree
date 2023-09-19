@@ -1,4 +1,5 @@
 #include "f:/quadtree/header/common.h"
+using std::to_string;
 
 GPSdata* str2data(std::string s) {
     std::vector<std::string> data(4, "");
@@ -42,4 +43,51 @@ bool equal(double a, double b) {
         return true;
 
     return false;
+}
+
+vector<int> time2date(string time) {
+    string temp = "";
+    vector<int> date;
+    for (char ch : time) {
+        if (ch == '-' || ch == ':' || ch == ' ') {
+            date.emplace_back(std::stoi(temp));
+            temp = "";
+        } else {
+            temp += ch;
+        }
+    }
+    date.emplace_back(std::stoi(temp));
+    return date;
+}
+
+string date2time(vector<int> date) {
+    return to_string(date[0]) + "-" + to_string(date[1]) + "-" +
+           to_string(date[2]) + " " + to_string(date[3]) + ":" +
+           to_string(date[4]) + ":" + to_string(date[5]);
+}
+
+bool earlier(string time1, vector<int> time2) {
+    auto time1_int = time2date(time1);
+    for (int i = 0; i < time1_int.size(); ++i) {
+        if (time1_int[i] < time2[i]) {
+            return true;
+        }
+
+        if (time1_int[i] > time2[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool later(string time1, vector<int> time2) {
+    return !earlier(time1, time2);
+}
+
+double distance(GPSdata* d1, GPSdata* d2) {
+    return (d1->longitude * 1000 - d2->longitude * 1000) *
+               (d1->longitude * 1000 - d2->longitude * 1000) +
+           (d1->latitude * 1000 - d2->latitude * 1000) *
+               (d1->latitude * 1000 - d2->latitude * 1000);
 }

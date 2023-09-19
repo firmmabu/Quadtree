@@ -91,6 +91,8 @@ CMakeFiles/main.dir/src/quadtree.cpp.obj: F:\quadtree\src\quadtree.cpp \
  D:/CODE/mingw64/lib/gcc/i686-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  D:/CODE/mingw64/lib/gcc/i686-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  D:/CODE/mingw64/lib/gcc/i686-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
+ D:/CODE/mingw64/lib/gcc/i686-w64-mingw32/13.1.0/include/float.h \
+ D:/CODE/mingw64/i686-w64-mingw32/include/float.h \
  D:/CODE/mingw64/lib/gcc/i686-w64-mingw32/13.1.0/include/c++/cmath \
  D:/CODE/mingw64/i686-w64-mingw32/include/math.h \
  D:/CODE/mingw64/lib/gcc/i686-w64-mingw32/13.1.0/include/c++/iomanip \
