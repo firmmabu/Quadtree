@@ -1,4 +1,4 @@
-#include "f:/quadtree/header/common.h"
+#include "../header/common.h"
 using std::to_string;
 
 GPSdata* str2data(std::string s) {

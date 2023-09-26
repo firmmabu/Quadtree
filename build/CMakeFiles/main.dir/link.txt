@@ -1,3 +1,1 @@
-D:\CODE\CMake\bin\cmake.exe -E rm -f CMakeFiles\main.dir/objects.a
-D:\CODE\mingw64\bin\ar.exe qc CMakeFiles\main.dir/objects.a @CMakeFiles\main.dir\objects1.rsp
-g++ -g -Wl,--whole-archive CMakeFiles\main.dir/objects.a -Wl,--no-whole-archive -o main.exe -Wl,--out-implib,libmain.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\main.dir\linkLibs.rsp
+g++ -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/quadtree.cpp.o CMakeFiles/main.dir/src/common.cpp.o -o main 

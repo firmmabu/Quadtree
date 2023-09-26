@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
-#include "f:/quadtree/header/common.h"
+#include "../header/common.h"
 
 int main() {
     int DATANUM = 10000;
@@ -13,7 +13,7 @@ int main() {
     std::cout << "正在构建包围盒\n";
     for (int i = 1; i <= DATANUM; ++i) {
         std::string buffer;
-        std::string path = "F:/quadtree/data/" + std::to_string(i) + ".txt";
+        std::string path = "../data/" + std::to_string(i) + ".txt";
         std::ifstream file(path);
         if (!file.is_open()) {
             // std::cerr << "cant open file\t" + path << '\n';
@@ -37,10 +37,10 @@ int main() {
     std::cout << "正在构建四叉树\n";
     for (int i = 1; i <= DATANUM; ++i) {
         std::string buffer;
-        std::string path = "F:/quadtree/data/" + std::to_string(i) + ".txt";
+        std::string path = "../data/" + std::to_string(i) + ".txt";
         std::ifstream file(path);
         if (!file.is_open()) {
-            // std::cerr << "cant open file\t" + path << '\n';
+            std::cerr << "cant open file\t" + path << '\n';
             continue;
         }
         while (std::getline(file, buffer)) {

@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.6.0"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-b254334666015a3b2a7f.json",
+					"jsonFile" : "target-main-Debug-52f7a23c2331278fbd49.json",
 					"name" : "main",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "F:/quadtree/build",
-		"source" : "F:/quadtree"
+		"build" : "/Users/qiuyuzeng/CODE/Quadtree/build",
+		"source" : "/Users/qiuyuzeng/CODE/Quadtree"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 6
 	}
 }

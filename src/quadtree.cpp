@@ -1,9 +1,9 @@
-#include "f:/quadtree/header/quadtree.h"
+#include "../header/quadtree.h"
 #include <float.h>
 #include <cmath>
 #include <iomanip>
 #include <iostream>
-#include "f:/quadtree/header/common.h"
+#include "../header/common.h"
 
 GPSdata::GPSdata() {}
 

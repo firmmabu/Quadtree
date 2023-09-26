@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "f:/quadtree/header/quadtree.h"
+#include "../header/quadtree.h"
 
 GPSdata* str2data(std::string s);
 

@@ -1,20 +1,20 @@
 [
 {
-  "directory": "F:/quadtree/build",
-  "command": "g++   -g -std=gnu++11 -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c F:\\quadtree\\src\\main.cpp",
-  "file": "F:/quadtree/src/main.cpp",
-  "output": "CMakeFiles/main.dir/src/main.cpp.obj"
+  "directory": "/Users/qiuyuzeng/CODE/Quadtree/build",
+  "command": "g++   -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/main.dir/src/main.cpp.o -c /Users/qiuyuzeng/CODE/Quadtree/src/main.cpp",
+  "file": "/Users/qiuyuzeng/CODE/Quadtree/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
 },
 {
-  "directory": "F:/quadtree/build",
-  "command": "g++   -g -std=gnu++11 -o CMakeFiles\\main.dir\\src\\quadtree.cpp.obj -c F:\\quadtree\\src\\quadtree.cpp",
-  "file": "F:/quadtree/src/quadtree.cpp",
-  "output": "CMakeFiles/main.dir/src/quadtree.cpp.obj"
+  "directory": "/Users/qiuyuzeng/CODE/Quadtree/build",
+  "command": "g++   -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/main.dir/src/quadtree.cpp.o -c /Users/qiuyuzeng/CODE/Quadtree/src/quadtree.cpp",
+  "file": "/Users/qiuyuzeng/CODE/Quadtree/src/quadtree.cpp",
+  "output": "CMakeFiles/main.dir/src/quadtree.cpp.o"
 },
 {
-  "directory": "F:/quadtree/build",
-  "command": "g++   -g -std=gnu++11 -o CMakeFiles\\main.dir\\src\\common.cpp.obj -c F:\\quadtree\\src\\common.cpp",
-  "file": "F:/quadtree/src/common.cpp",
-  "output": "CMakeFiles/main.dir/src/common.cpp.obj"
+  "directory": "/Users/qiuyuzeng/CODE/Quadtree/build",
+  "command": "g++   -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/main.dir/src/common.cpp.o -c /Users/qiuyuzeng/CODE/Quadtree/src/common.cpp",
+  "file": "/Users/qiuyuzeng/CODE/Quadtree/src/common.cpp",
+  "output": "CMakeFiles/main.dir/src/common.cpp.o"
 }
 ]

@@ -1,13 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/src/common.cpp.obj"
-  "CMakeFiles/main.dir/src/common.cpp.obj.d"
-  "CMakeFiles/main.dir/src/main.cpp.obj"
-  "CMakeFiles/main.dir/src/main.cpp.obj.d"
-  "CMakeFiles/main.dir/src/quadtree.cpp.obj"
-  "CMakeFiles/main.dir/src/quadtree.cpp.obj.d"
-  "libmain.dll.a"
-  "main.exe"
-  "main.exe.manifest"
+  "CMakeFiles/main.dir/src/common.cpp.o"
+  "CMakeFiles/main.dir/src/common.cpp.o.d"
+  "CMakeFiles/main.dir/src/main.cpp.o"
+  "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "CMakeFiles/main.dir/src/quadtree.cpp.o"
+  "CMakeFiles/main.dir/src/quadtree.cpp.o.d"
+  "main"
   "main.pdb"
 )
 

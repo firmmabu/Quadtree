@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "main.exe"
-		},
-		{
-			"path" : "main.pdb"
+			"path" : "main"
 		}
 	],
 	"backtrace" : 1,
@@ -38,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++11"
+					"fragment" : "-g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
 				}
 			],
 			"language" : "CXX",
@@ -70,16 +67,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "main",
-	"nameOnDisk" : "main.exe",
+	"nameOnDisk" : "main",
 	"paths" : 
 	{
 		"build" : ".",

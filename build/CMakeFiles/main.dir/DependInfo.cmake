@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "F:/quadtree/src/common.cpp" "CMakeFiles/main.dir/src/common.cpp.obj" "gcc" "CMakeFiles/main.dir/src/common.cpp.obj.d"
-  "F:/quadtree/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.obj" "gcc" "CMakeFiles/main.dir/src/main.cpp.obj.d"
-  "F:/quadtree/src/quadtree.cpp" "CMakeFiles/main.dir/src/quadtree.cpp.obj" "gcc" "CMakeFiles/main.dir/src/quadtree.cpp.obj.d"
+  "/Users/qiuyuzeng/CODE/Quadtree/src/common.cpp" "CMakeFiles/main.dir/src/common.cpp.o" "gcc" "CMakeFiles/main.dir/src/common.cpp.o.d"
+  "/Users/qiuyuzeng/CODE/Quadtree/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "/Users/qiuyuzeng/CODE/Quadtree/src/quadtree.cpp" "CMakeFiles/main.dir/src/quadtree.cpp.o" "gcc" "CMakeFiles/main.dir/src/quadtree.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
